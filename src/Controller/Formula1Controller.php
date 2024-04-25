@@ -13,7 +13,8 @@ class Formula1Controller extends AbstractController
     public function index(CallApiService $callApiService): Response
     {
         return $this->render('formula1/index.html.twig', [
-            'data' => $callApiService->getRacesIn2024()
+            'data' => $callApiService->getRacesIn2024(),
+            
         ]);
     }
 }

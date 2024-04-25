@@ -1,20 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello Formula1Controller!{% endblock %}
+{% block title %}Hello Formula1Controller!
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	<style></style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+	<div class="container">
+		<h1>Formula 1 Races in 2024</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/Users/s2400073/Desktop/github/symfony/formula1app/src/Controller/Formula1Controller.php</code></li>
-        <li>Your template at <code>/Users/s2400073/Desktop/github/symfony/formula1app/templates/formula1/index.html.twig</code></li>
-    </ul>
-</div>
+		<div class="row row-cols-3 gap-3">
+			{% for race in data.MRData.RaceTable.Races %}
+				<div class="card col" style="width: 18rem;">
+					<div class="card-header">
+						<a href="{{race.url}}" target="_blank">{{race.raceName}}</a>
+					</div>
+					<img src="https://source.unsplash.com/300x300?{{race.raceName}}" class="card-img-top w-100" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">
+							<a href="{{race.Circuit.url}}" target="_blank" rel="noopener noreferrer">
+								Circuit:{{race.Circuit.circuitName}}
+							</a>
+						</h5>
+						<p>Location:
+							{{race.Circuit.Location.locality}},
+							{{race.Circuit.Location.country}}
+						</p>
+						<p class="card-text">
+							Date :
+							{{race.date}}
+						</p>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+
+
+	</div>
 {% endblock %}
