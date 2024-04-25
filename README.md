@@ -7,24 +7,27 @@ This project displays a list of Formula 1 races in 2024 using the Ergast Develop
 To install the project, follow these steps:
 
 1. Clone the repository:
-    ```
-    git clone https://github.com/your-username/formula1-races.git
-    ```
+
+   ```
+   git clone https://github.com/the-sankari/formula_1_app.git
+   ```
 
 2. Install the dependencies:
-    ```
-    composer install
-    ```
+
+   ```
+   composer install
+   ```
 
 3. Start the built-in PHP server:
-    ```
-    symfony server:start
-    ```
+
+   ```
+   symfony server:start
+   ```
 
 4. Open the application in your browser:
-    ```
-    http://localhost:8000
-    ```
+   ```
+   http://localhost:8000
+   ```
 
 ## Usage
 
@@ -40,7 +43,7 @@ You can click on the race name to view more information about the race on the of
 ## Technologies Used
 
 - Symfony 7.0
-- Twig 
+- Twig
 - Ergast Developer API
 - Bootstrap 5.3
 - Google Fonts
