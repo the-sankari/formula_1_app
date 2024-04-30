@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello Formula1Controller!
+{% block title %}Hello HomeController!
 {% endblock %}
 
 {% block body %}
@@ -13,7 +13,7 @@
 			<div class="collapse navbar-collapse" id="collapsibleNavId">
 				<ul class="navbar-nav me-auto mt-2 mt-lg-0">
 					<li class="nav-item">
-						<a class="nav-link active" href="{{ path('app_home') }}" aria-current="page">Home
+						<a class="nav-link active" href="#" aria-current="page">Home
 							<span class="visually-hidden">(current)</span>
 						</a>
 					</li>
@@ -32,35 +32,4 @@
 		</div>
 	</nav>
 
-	<div class="container">
-		<h1>Formula 1 Races in 2024</h1>
-
-		<div class="row row-cols-3 gap-3">
-			{% for race in data.MRData.RaceTable.Races %}
-				<div class="card col" style="width: 18rem;">
-					<div class="card-header">
-						<a href="{{race.url}}" target="_blank">{{race.raceName}}</a>
-					</div>
-					<img src="https://source.unsplash.com/300x300?{{race.raceName}}" class="card-img-top w-100" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">
-							<a href="{{race.Circuit.url}}" target="_blank" rel="noopener noreferrer">
-								Circuit:{{race.Circuit.circuitName}}
-							</a>
-						</h5>
-						<p>Location:
-							{{race.Circuit.Location.locality}},
-							{{race.Circuit.Location.country}}
-						</p>
-						<p class="card-text">
-							Date :
-							{{race.date}}
-						</p>
-					</div>
-				</div>
-			{% endfor %}
-		</div>
-
-
-	</div>
 {% endblock %}
